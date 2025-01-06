@@ -2,26 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Ana tema renkleri */
+    --background: 225 33% 98%;
+    --foreground: 224 71.4% 4.1%;
+    
+    /* Kartlar ve Popoverlar */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    /* Primary - Modern Mavi/Mor tonları */
+    --primary: 242 83% 54%;
+    --primary-foreground: 210 20% 98%;
+    
+    /* Secondary - Açık gri tonları */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 28%;
+    
+    /* Muted ve Accent */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 14% 28%;
+    
+    /* Destructive - Yumuşak kırmızı */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Border ve Input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 242 83% 54%;
+  
+    /* Chart renkleri - Canlı ve uyumlu */
+    --chart-1: 242 83% 54%;  /* Primary mavi */
+    --chart-2: 262 83% 58%;  /* Mor */
+    --chart-3: 291 70% 50%;  /* Fuşya */
+    --chart-4: 316 70% 50%;  /* Pembe */
+    --chart-5: 340 65% 55%;  /* Kırmızımsı pembe */
+    
+    --radius: 0.75rem;
+  }
+  
+  .dark {
+    /* Koyu tema - Daha sofistike */
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+    
+    /* Kartlar ve Popoverlar */
+    --card: 224 71% 4%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Primary - Parlak ve modern */
+    --primary: 242 83% 54%;
+    --primary-foreground: 210 20% 98%;
+    
+    /* Secondary - Koyu gri tonları */
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    
+    /* Muted ve Accent */
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    
+    /* Destructive - Koyu kırmızı */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Border ve Input */
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 242 83% 54%;
+  
+    /* Chart renkleri - Neon efektli */
+    --chart-1: 242 83% 54%;  /* Parlak mavi */
+    --chart-2: 262 83% 58%;  /* Parlak mor */
+    --chart-3: 291 70% 50%;  /* Neon fuşya */
+    --chart-4: 316 70% 50%;  /* Neon pembe */
+    --chart-5: 340 65% 55%;  /* Parlak kırmızı */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* navbar height için padding */
   }
 }
